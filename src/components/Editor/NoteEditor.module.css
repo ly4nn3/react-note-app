@@ -1,0 +1,15 @@
+noteEditor {
+    flex: 1;
+    display: flex;
+    background-color: #fff;
+}
+
+.textarea {
+    flex: 1;
+    padding: 1rem;
+    border: 1px;
+    outline: none;
+    resize: none;
+    font-size: 14px;
+    font-family: 'Courier New', Courier, monospace;
+}

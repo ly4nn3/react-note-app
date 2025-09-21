@@ -44,42 +44,63 @@ This project was developed using:
 
 # Useful Websites
 
-* [How to Create a React App](https://www.codecademy.com/courses/learn-react-introduction/articles/how-to-create-a-react-app)
+- [Learn React](https://react.dev/learn) 
+- [How to Create a React App](https://www.codecademy.com/courses/learn-react-introduction/articles/how-to-create-a-react-app)
 
 # Future Work
 
 **Core Phases**
 
-Phase 1: Scaffolding & Layout
-- Set up React components and containers
-- Create dual sidebars (shortcut bar + directory explorer)
-- Add note editor area
+<details open>
+<summary>Phase 2: State Management</summary>
 
-Phase 2: State Management
 - Implement React Context for global state
 - Manage selected note and folder states
 - Connect UI interactions to state changes
+</details>
 
-Phase 3: IndexedDB Integration
+<details open>
+<summary>Phase 3: IndexedDB Integration</summary>
+
 - Set up IndexedDB with `idb` library
 - Store and retrieve notes/folders
 - Implement CRUD operations
+</details>
+
+<details>
+<summary>Phase 1: Scaffolding & Layout ✅</summary>
+
+- Set up React components and containers
+- Create dual sidebars (shortcut bar + directory explorer)
+- Add note editor area
+</details>
 
 ---
 
 **Enhancement Phases (ENH)**
 
-ENH 1: Core Features
+
+<details open>
+<summary>ENH 1: Core Features</summary>
+
 - Auto-save notes while typing
 - Allow directory sidebar resizing
 - Add basic note search
+</details>
 
-ENH 2: Advanced Features
+<details open>
+<summary>ENH 2: Advanced Features</summary>
+
 - Tagging system for notes
 - Favorite folders and files
 - Dark/light theme switching
+</details>
 
-ENH 3: Future Plans
+
+<details open>
+<summary>ENH 3: Future Plans</summary>
+
 - Cloud sync and backup options
 - Import/export notes
 - Polished UI and performance optimizations
+</details>
