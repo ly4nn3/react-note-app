@@ -4,16 +4,19 @@ import NoteEditor from "../components/Editor/NoteEditor";
 import { SidebarProvider } from "../context/SidebarContext";
 
 import styles from "./AppLayout.module.css";
+import { NotesProvider } from "../context/NotesContext";
 
 function AppLayout() {
     return (
-        <SidebarProvider>
-            <div className={styles.appLayout}>
-                <ShortcutBar />
-                <DirectorySidebar />
-                <NoteEditor />
-            </div>
-        </SidebarProvider>
+        <NotesProvider>
+            <SidebarProvider>
+                <div className={styles.appLayout}>
+                    <ShortcutBar />
+                    <DirectorySidebar />
+                    <NoteEditor />
+                </div>
+            </SidebarProvider>
+        </NotesProvider>
     );
 }
 

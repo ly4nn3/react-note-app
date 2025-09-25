@@ -47,18 +47,19 @@ This project was developed using:
 - [Learn React](https://react.dev/learn) 
 - [How to Create a React App](https://www.codecademy.com/courses/learn-react-introduction/articles/how-to-create-a-react-app)
 - [Passing Data Deeply with Context](https://react.dev/learn/passing-data-deeply-with-context#context-an-alternative-to-passing-props)
+- [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API)
 
 # Future Work
 
 **Core Phases**
 
 <details open>
-<summary>Phase 3: IndexedDB Integration</summary>
+<summary>Phase 4: Core Features</summary>
 
-- Set up IndexedDB with `idb` library
-- Store and retrieve notes/folders
-- Implement CRUD operations
-</details>
+- Delete/Rename notes and folders
+- Resize sidebars via drag
+- Expand/collapse folders
+- Confirmation before deletion
 
 <details>
 <summary>Phase 1: Scaffolding & Layout ✅</summary>
@@ -74,6 +75,14 @@ This project was developed using:
 - Implement React Context for global state
 - Manage selected note and folder states
 - Connect UI interactions to state changes
+</details>
+
+<details>
+<summary>Phase 3: IndexedDB Integration ✅</summary>
+
+- Set up IndexedDB with `idb` library
+- Store and retrieve notes/folders
+- Create new notes and folders
 </details>
 
 ---

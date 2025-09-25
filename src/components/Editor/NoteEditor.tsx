@@ -1,8 +1,10 @@
 import { useSidebarContext } from "../../context/SidebarContext";
+import { useNotes } from "../../context/NotesContext";
 import styles from "./NoteEditor.module.css";
 
 function NoteEditor() {
-    const { notes, activeNoteId } = useSidebarContext();
+    const { activeNoteId } = useSidebarContext();
+    const { notes, updateNote } = useNotes();
 
     const activeNote = notes.find((n) => n.id === activeNoteId);
 
@@ -14,10 +16,24 @@ function NoteEditor() {
         );
     }
 
+    const handleContentChange = (
+        event: React.ChangeEvent<HTMLTextAreaElement>
+    ) => {
+        updateNote({
+            ...activeNote,
+            content: event.target.value,
+            updatedAt: Date.now(),
+        });
+    };
+
     return (
         <div className={styles.noteEditor}>
             <h2>{activeNote.title}</h2>
-            <p>{activeNote.content}</p>
+            <textarea
+                value={activeNote.content}
+                onChange={handleContentChange}
+                className={styles.textarea}
+            />
         </div>
     );
 }
