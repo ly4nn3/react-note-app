@@ -54,12 +54,14 @@ This project was developed using:
 **Core Phases**
 
 <details open>
-<summary>Phase 4: Core Features</summary>
+<summary>Phase 5: Styling & Polish</summary>
 
-- Delete/Rename notes and folders
-- Resize sidebars via drag
-- Expand/collapse folders
-- Confirmation before deletion
+- Hover states and transitions
+- Icons and visual hierarchy
+- Consistent component styling
+- Responsive behavior
+- Loading states
+</details>
 
 <details>
 <summary>Phase 1: Scaffolding & Layout ✅</summary>
@@ -83,6 +85,16 @@ This project was developed using:
 - Set up IndexedDB with `idb` library
 - Store and retrieve notes/folders
 - Create new notes and folders
+</details>
+
+
+<details>
+<summary>Phase 4: Core Features ✅</summary>
+
+- Delete/Rename notes and folders
+- Resize sidebars via drag
+- Expand/collapse folders
+- Confirmation before deletion
 </details>
 
 ---

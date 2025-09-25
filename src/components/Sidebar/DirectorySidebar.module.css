@@ -3,6 +3,7 @@
   background-color: #f4f4f4; /* light gray */
   border-right: 1px solid #ddd;
   padding: 12px;
+  position: relative;
 }
 
 .title {

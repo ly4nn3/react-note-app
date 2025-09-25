@@ -6,6 +6,8 @@ import {
     deleteNote,
     addFolder,
     getFolders,
+    deleteFolder,
+    updateFolder,
 } from "../db/db";
 
 interface Note {
@@ -27,10 +29,13 @@ interface NotesContextType {
     folders: Folder[];
     createNote: (note: Omit<Note, "id">) => Promise<void>;
     updateNote: (note: Note) => Promise<void>;
+    renameNote: (id: number, title: string) => Promise<void>;
     removeNote: (id: number) => Promise<void>;
     createFolder: (folder: Omit<Folder, "id">) => Promise<void>;
     refreshNotes: () => Promise<void>;
     refreshFolders: () => Promise<void>;
+    removeFolder: (id: number) => Promise<void>;
+    renameFolder: (id: number, title: string) => Promise<void>;
 }
 
 const NotesContext = createContext<NotesContextType | undefined>(undefined);
@@ -58,6 +63,15 @@ export const NotesProvider = ({ children }: NotesProviderProps) => {
         await refreshNotes();
     };
 
+    const renameNote = async (id: number, title: string) => {
+        const note = notes.find((n) => n.id === id);
+
+        if (!note) return;
+
+        await updateNote({ ...note, title });
+        await refreshNotes();
+    };
+
     const removeNote = async (id: number) => {
         await deleteNote(id);
         await refreshNotes();
@@ -73,6 +87,20 @@ export const NotesProvider = ({ children }: NotesProviderProps) => {
         await refreshFolders();
     };
 
+    const renameFolder = async (id: number, title: string) => {
+        const folder = folders.find((f) => f.id === id);
+
+        if (!folder) return;
+
+        await updateFolder({ ...folder, title });
+        await refreshFolders();
+    };
+
+    const removeFolder = async (id: number) => {
+        await deleteFolder(id);
+        await refreshFolders();
+    };
+
     useEffect(() => {
         refreshNotes();
         refreshFolders();
@@ -85,10 +113,13 @@ export const NotesProvider = ({ children }: NotesProviderProps) => {
                 folders,
                 createNote,
                 updateNote: updateNoteFunction,
+                renameNote,
                 removeNote,
                 createFolder,
                 refreshNotes,
                 refreshFolders,
+                renameFolder,
+                removeFolder,
             }}
         >
             {children}
