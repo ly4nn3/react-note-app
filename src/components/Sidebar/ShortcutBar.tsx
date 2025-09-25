@@ -1,11 +1,36 @@
+import { useSidebarContext } from "../../context/SidebarContext";
 import styles from "./ShortcutBar.module.css";
 
 function ShortcutBar() {
+    const { isSidebarOpen, toggleSidebar } = useSidebarContext();
+
     return (
         <div className={styles.shortcutBar}>
-            <div className={styles.icon}></div>
-            <div className={styles.icon}></div>
-            <div className={styles.icon}></div>
+            <button onClick={toggleSidebar} className={styles.toggleButton}>
+                {isSidebarOpen ? (
+                    // Close icon
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="24px"
+                        viewBox="0 -960 960 960"
+                        width="24px"
+                        fill="#e3e3e3"
+                    >
+                        <path d="M660-320v-320L500-480l160 160ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm120-80v-560H200v560h120Zm80 0h360v-560H400v560Zm-80 0H200h120Z" />
+                    </svg>
+                ) : (
+                    // Open icon
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="24px"
+                        viewBox="0 -960 960 960"
+                        width="24px"
+                        fill="#e3e3e3"
+                    >
+                        <path d="M500-640v320l160-160-160-160ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm120-80v-560H200v560h120Zm80 0h360v-560H400v560Zm-80 0H200h120Z" />
+                    </svg>
+                )}
+            </button>
         </div>
     );
 }

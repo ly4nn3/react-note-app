@@ -46,18 +46,11 @@ This project was developed using:
 
 - [Learn React](https://react.dev/learn) 
 - [How to Create a React App](https://www.codecademy.com/courses/learn-react-introduction/articles/how-to-create-a-react-app)
+- [Passing Data Deeply with Context](https://react.dev/learn/passing-data-deeply-with-context#context-an-alternative-to-passing-props)
 
 # Future Work
 
 **Core Phases**
-
-<details open>
-<summary>Phase 2: State Management</summary>
-
-- Implement React Context for global state
-- Manage selected note and folder states
-- Connect UI interactions to state changes
-</details>
 
 <details open>
 <summary>Phase 3: IndexedDB Integration</summary>
@@ -73,6 +66,14 @@ This project was developed using:
 - Set up React components and containers
 - Create dual sidebars (shortcut bar + directory explorer)
 - Add note editor area
+</details>
+
+<details>
+<summary>Phase 2: State Management ✅</summary>
+
+- Implement React Context for global state
+- Manage selected note and folder states
+- Connect UI interactions to state changes
 </details>
 
 ---
