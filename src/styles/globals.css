@@ -1,4 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Slab:wght@100..900&display=swap');
+
+:root {
+    /* Background */
+    --color-primary-bg: #241943;
+    --color-secondary-bg: #433C67;
+
+    /* Fonts */
+    --font-heading: "Roboto Slab", serif;
+    --font-body: "Inter", sans-serif;
+    --color-primary-text: #E6C1D6;
+    --color-secondary-text: #FFFFFF;
+    --color-main-text: black;
+
+    /* Accent */
+    --color-accent: #4BC3B3;
+}
+
 body {
+    font-family: var(--font-body);
+    background-color: #FFFFFF;
+    color: var(--color-main-text);
     margin: 0;
-    font-family: 'Courier New', Courier, monospace;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--color-primary-text);
 }
