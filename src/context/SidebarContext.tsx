@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useState } from "react";
 
 type SidebarContextType = {
     isSidebarOpen: boolean;
@@ -9,7 +9,7 @@ type SidebarContextType = {
     setActiveFolderId: (id: number) => void;
 };
 
-const SidebarContext = createContext<SidebarContextType | undefined>(undefined);
+export const SidebarContext = createContext<SidebarContextType | undefined>(undefined);
 
 type SidebarProviderProps = {
     children: React.ReactNode;
@@ -40,13 +40,4 @@ export const SidebarProvider = ({ children }: SidebarProviderProps) => {
             {children}
         </SidebarContext.Provider>
     );
-};
-
-export const useSidebarContext = () => {
-    const context = useContext(SidebarContext);
-    if (!context)
-        throw new Error(
-            "useSidebarContext must be used within SidebarProvider"
-        );
-    return context;
 };

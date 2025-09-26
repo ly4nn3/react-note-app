@@ -1,5 +1,5 @@
-import { useSidebarContext } from "../../context/SidebarContext";
-import { useNotes } from "../../context/NotesContext";
+import { useSidebarContext } from "../../context/useSidebar";
+import { useNotes } from "../../context/useNotes";
 import styles from "./NoteEditor.module.css";
 
 function NoteEditor() {

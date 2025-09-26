@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import {
     addNote,
     getNotes,
@@ -38,7 +38,7 @@ interface NotesContextType {
     renameFolder: (id: number, title: string) => Promise<void>;
 }
 
-const NotesContext = createContext<NotesContextType | undefined>(undefined);
+export const NotesContext = createContext<NotesContextType | undefined>(undefined);
 
 type NotesProviderProps = {
     children: React.ReactNode;
@@ -125,10 +125,4 @@ export const NotesProvider = ({ children }: NotesProviderProps) => {
             {children}
         </NotesContext.Provider>
     );
-};
-
-export const useNotes = () => {
-    const context = useContext(NotesContext);
-    if (!context) throw new Error("useNotes must be used within NotesProvider");
-    return context;
 };
