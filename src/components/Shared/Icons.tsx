@@ -82,7 +82,7 @@ export const SidebarCloseIcon = () => (
     </svg>
 );
 
-export const CreateFolderIcon =() => (
+export const CreateFolderIcon = () => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         height="24px"

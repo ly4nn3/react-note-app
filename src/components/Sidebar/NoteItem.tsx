@@ -24,10 +24,10 @@ function NoteItem({
     isActive,
     onClick,
     openDropDown,
-    onDropdownToggle
+    onDropdownToggle,
 }: NoteItemProps) {
     const { renameNote, removeNote } = useNotes();
-    
+
     const [isRenaming, setIsRenaming] = useState(false);
     const [tempTitle, setTempTitle] = useState(note.title);
 
@@ -42,7 +42,9 @@ function NoteItem({
 
     const handleDelete = (e: React.MouseEvent) => {
         e.stopPropagation();
-        const confirmed = window.confirm(`Are you sure you want to delete "${note.title}"?`);
+        const confirmed = window.confirm(
+            `Are you sure you want to delete "${note.title}"?`
+        );
 
         if (confirmed) {
             removeNote(note.id);
@@ -99,9 +101,7 @@ function NoteItem({
             className={`${styles.noteItem} ${isActive ? styles.active : ""}`}
             onClick={onClick}
         >
-            <div className={styles.noteContent}>
-                {renderTitle()}
-            </div>
+            <div className={styles.noteContent}>{renderTitle()}</div>
         </li>
     );
 }

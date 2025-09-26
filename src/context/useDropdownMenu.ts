@@ -20,6 +20,6 @@ export const useDropdownMenu = () => {
         openDropDown,
         handleDropdownToggle,
         handleOutsideClick,
-        closeDropdown
+        closeDropdown,
     };
 };

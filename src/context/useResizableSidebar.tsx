@@ -7,28 +7,34 @@ export const useResizableSidebar = () => {
     const [startWidth, setStartWidth] = useState(0);
     const sidebarRef = useRef<HTMLDivElement>(null);
 
-    const handleMouseDown = useCallback((e: React.MouseEvent) => {
-        setIsResizing(true);
-        setStartX(e.clientX);
-        setStartWidth(sidebarWidth);
-        e.preventDefault();
-    }, [sidebarWidth]);
+    const handleMouseDown = useCallback(
+        (e: React.MouseEvent) => {
+            setIsResizing(true);
+            setStartX(e.clientX);
+            setStartWidth(sidebarWidth);
+            e.preventDefault();
+        },
+        [sidebarWidth]
+    );
 
-    const handleMouseMove = useCallback((e: MouseEvent) => {
-        if (!isResizing) return;
+    const handleMouseMove = useCallback(
+        (e: MouseEvent) => {
+            if (!isResizing) return;
 
-        const deltaX = e.clientX - startX;
-        const newWidth = startWidth + deltaX;
-        const minWidth = 200;
-        const maxWidth = 600;
+            const deltaX = e.clientX - startX;
+            const newWidth = startWidth + deltaX;
+            const minWidth = 200;
+            const maxWidth = 600;
 
-        if (newWidth >= minWidth && newWidth <= maxWidth) {
-            setSidebarWidth(newWidth);
-        }
-    }, [isResizing, startX, startWidth]);
+            if (newWidth >= minWidth && newWidth <= maxWidth) {
+                setSidebarWidth(newWidth);
+            }
+        },
+        [isResizing, startX, startWidth]
+    );
 
     const handleMouseUp = useCallback(() => {
-    setIsResizing(false);
+        setIsResizing(false);
     }, []);
 
     useEffect(() => {
@@ -51,6 +57,6 @@ export const useResizableSidebar = () => {
         sidebarWidth,
         isResizing,
         handleMouseDown,
-        sidebarRef
+        sidebarRef,
     };
 };

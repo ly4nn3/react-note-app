@@ -1,6 +1,11 @@
 import { useSidebarContext } from "../../context/useSidebar";
 import { useNotes } from "../../context/useNotes";
-import { SidebarOpenIcon, SidebarCloseIcon, CreateFolderIcon, CreateNoteIcon } from "../Shared/Icons";
+import {
+    SidebarOpenIcon,
+    SidebarCloseIcon,
+    CreateFolderIcon,
+    CreateNoteIcon,
+} from "../Shared/Icons";
 import styles from "../../styles/modules/ShortcutBar.module.css";
 
 function ShortcutBar() {
@@ -38,7 +43,7 @@ function ShortcutBar() {
                 onClick={handleCreateFolder}
                 className={styles.createFolderButton}
             >
-                <CreateFolderIcon />   
+                <CreateFolderIcon />
             </button>
 
             <button onClick={handleCreateNote} className={styles.newNoteButton}>

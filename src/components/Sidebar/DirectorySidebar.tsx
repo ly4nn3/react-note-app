@@ -1,11 +1,14 @@
 import { useState } from "react";
+
 import { useSidebarContext } from "../../context/useSidebar";
 import { useNotes } from "../../context/useNotes";
 import { useResizableSidebar } from "../../context/useResizableSidebar";
 import { useDropdownMenu } from "../../context/useDropdownMenu";
+
 import FolderItem from "./FolderItem";
 import NoteItem from "./NoteItem";
 import ResizeHandle from "./ResizeHandle";
+
 import styles from "../../styles/modules/DirectorySidebar.module.css";
 
 function DirectorySidebar() {
@@ -23,18 +26,11 @@ function DirectorySidebar() {
         new Set()
     );
 
-    const {
-        sidebarWidth,
-        isResizing,
-        handleMouseDown,
-        sidebarRef
-    } = useResizableSidebar();
+    const { sidebarWidth, isResizing, handleMouseDown, sidebarRef } =
+        useResizableSidebar();
 
-    const {
-        openDropDown,
-        handleDropdownToggle,
-        handleOutsideClick
-    } = useDropdownMenu();
+    const { openDropDown, handleDropdownToggle, handleOutsideClick } =
+        useDropdownMenu();
 
     if (!isSidebarOpen) return null;
 
@@ -71,22 +67,30 @@ function DirectorySidebar() {
                         isActive={folder.id === activeFolderId}
                         isCollapsed={collapsedFolders.has(folder.id)}
                         onFolderClick={() => setActiveFolderId(folder.id)}
-                        onToggleCollapse={(e) => toggleFolderCollapse(folder.id, e)}
+                        onToggleCollapse={(e) =>
+                            toggleFolderCollapse(folder.id, e)
+                        }
                         openDropDown={openDropDown}
                         onDropdownToggle={handleDropdownToggle}
                     >
                         {!collapsedFolders.has(folder.id) && (
                             <ul className={styles.subList}>
                                 {notes
-                                    .filter((note) => note.folderId === folder.id)
+                                    .filter(
+                                        (note) => note.folderId === folder.id
+                                    )
                                     .map((note) => (
                                         <NoteItem
                                             key={note.id}
                                             note={note}
                                             isActive={note.id === activeNoteId}
-                                            onClick={() => setActiveNoteId(note.id)}
+                                            onClick={() =>
+                                                setActiveNoteId(note.id)
+                                            }
                                             openDropDown={openDropDown}
-                                            onDropdownToggle={handleDropdownToggle}
+                                            onDropdownToggle={
+                                                handleDropdownToggle
+                                            }
                                         />
                                     ))}
                             </ul>
@@ -113,8 +117,10 @@ function DirectorySidebar() {
                 )}
             </ul>
 
-            <ResizeHandle isResizing={isResizing} onMouseDown={handleMouseDown} />
-
+            <ResizeHandle
+                isResizing={isResizing}
+                onMouseDown={handleMouseDown}
+            />
         </div>
     );
 }

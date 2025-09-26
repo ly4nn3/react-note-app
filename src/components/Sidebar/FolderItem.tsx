@@ -29,7 +29,7 @@ function FolderItem({
     onToggleCollapse,
     openDropDown,
     onDropdownToggle,
-    children
+    children,
 }: FolderItemProps) {
     const { renameFolder, removeFolder } = useNotes();
 
@@ -47,7 +47,9 @@ function FolderItem({
 
     const handleDelete = (e: React.MouseEvent) => {
         e.stopPropagation();
-        const confirmed = window.confirm(`Are you sure you want to delete "${folder.title}"?`);
+        const confirmed = window.confirm(
+            `Are you sure you want to delete "${folder.title}"?`
+        );
 
         if (confirmed) {
             removeFolder(folder.id);
@@ -112,9 +114,7 @@ function FolderItem({
                     {isCollapsed ? <RightIcon /> : <DownIcon />}
                 </button>
 
-                <div className={styles.folderContent}>
-                    {renderTitle()}
-                </div>
+                <div className={styles.folderContent}>{renderTitle()}</div>
             </div>
 
             {children}

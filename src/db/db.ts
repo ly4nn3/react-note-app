@@ -5,6 +5,20 @@ const DB_VERSION = 1;
 const NOTE_STORE = "notes";
 const FOLDER_STORE = "folders";
 
+interface Note {
+    id: number;
+    title: string;
+    content: string;
+    folderId?: number;
+    updatedAt: number;
+}
+
+interface Folder {
+    id: number;
+    title: string;
+    parentId?: number;
+}
+
 export const initDB = async () => {
     return openDB(DB_NAME, DB_VERSION, {
         upgrade(db) {
@@ -26,7 +40,7 @@ export const initDB = async () => {
 };
 
 // Notes
-export const addNote = async (note: any) => {
+export const addNote = async (note: Omit<Note, "id">) => {
     const db = await initDB();
     return db.add(NOTE_STORE, note);
 };
@@ -36,7 +50,7 @@ export const getNotes = async () => {
     return db.getAll(NOTE_STORE);
 };
 
-export const updateNote = async (note: any) => {
+export const updateNote = async (note: Note) => {
     const db = await initDB();
     return db.put(NOTE_STORE, note);
 };
@@ -47,7 +61,7 @@ export const deleteNote = async (id: number) => {
 };
 
 // Folders
-export const addFolder = async (folder: any) => {
+export const addFolder = async (folder: Omit<Folder, "id">) => {
     const db = await initDB();
     return db.add(FOLDER_STORE, folder);
 };
@@ -57,7 +71,7 @@ export const getFolders = async () => {
     return db.getAll(FOLDER_STORE);
 };
 
-export const updateFolder = async (folder: any) => {
+export const updateFolder = async (folder: Folder) => {
     const db = await initDB();
     return db.put(FOLDER_STORE, folder);
 };

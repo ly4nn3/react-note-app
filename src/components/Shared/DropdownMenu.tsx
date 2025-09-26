@@ -12,32 +12,22 @@ function DropdownMenu({
     isOpen,
     onEdit,
     onDelete,
-    onToggle
+    onToggle,
 }: DropdownMenuProps) {
-
     return (
         <div className={styles.dropdownContainer}>
-            <button
-                onClick={onToggle}
-                className={styles.iconButton}
-            >
+            <button onClick={onToggle} className={styles.iconButton}>
                 <MoreIcon />
             </button>
 
             {isOpen && (
                 <div className={styles.dropdown}>
-                    <button
-                        onClick={onEdit}
-                        className={styles.dropdownItem}
-                    >
+                    <button onClick={onEdit} className={styles.dropdownItem}>
                         <EditIcon />
                         <span>Rename</span>
                     </button>
 
-                    <button
-                        onClick={onDelete}
-                        className={styles.dropdownItem}
-                    >
+                    <button onClick={onDelete} className={styles.dropdownItem}>
                         <DeleteIcon />
                         <span>Delete</span>
                     </button>
