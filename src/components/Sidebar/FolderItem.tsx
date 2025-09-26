@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNotes } from "../../context/useNotes";
 import { DownIcon, RightIcon } from "../Shared/Icons";
 import DropdownMenu from "../Shared/DropdownMenu";
-import styles from "./FolderItem.module.css";
+import styles from "../../styles/modules/FolderItem.module.css";
 
 interface Folder {
     id: number;
@@ -115,9 +115,9 @@ function FolderItem({
                 <div className={styles.folderContent}>
                     {renderTitle()}
                 </div>
-
-                {children}
             </div>
+
+            {children}
         </li>
     );
 }

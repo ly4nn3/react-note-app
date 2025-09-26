@@ -1,6 +1,6 @@
 import { useSidebarContext } from "../../context/useSidebar";
 import { useNotes } from "../../context/useNotes";
-import styles from "./NoteEditor.module.css";
+import styles from "../../styles/modules/NoteEditor.module.css";
 
 function NoteEditor() {
     const { activeNoteId } = useSidebarContext();

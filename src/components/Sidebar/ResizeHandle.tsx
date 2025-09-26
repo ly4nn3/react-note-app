@@ -1,4 +1,4 @@
-import styles from "./ResizeHandle.module.css";
+import styles from "../../styles/modules/ResizeHandle.module.css";
 
 interface ResizeHandleProps {
     isResizing: boolean;

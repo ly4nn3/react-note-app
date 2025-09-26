@@ -1,5 +1,5 @@
 import { EditIcon, DeleteIcon, MoreIcon } from "./Icons";
-import styles from "./DropdownMenu.module.css";
+import styles from "../../styles/modules/DropdownMenu.module.css";
 
 interface DropdownMenuProps {
     isOpen: boolean;
@@ -14,7 +14,6 @@ function DropdownMenu({
     onDelete,
     onToggle
 }: DropdownMenuProps) {
-    if (!isOpen) return null;
 
     return (
         <div className={styles.dropdownContainer}>

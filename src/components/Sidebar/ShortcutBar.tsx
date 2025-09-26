@@ -1,7 +1,7 @@
 import { useSidebarContext } from "../../context/useSidebar";
 import { useNotes } from "../../context/useNotes";
 import { SidebarOpenIcon, SidebarCloseIcon, CreateFolderIcon, CreateNoteIcon } from "../Shared/Icons";
-import styles from "./ShortcutBar.module.css";
+import styles from "../../styles/modules/ShortcutBar.module.css";
 
 function ShortcutBar() {
     const { isSidebarOpen, toggleSidebar, setActiveNoteId, activeFolderId } =

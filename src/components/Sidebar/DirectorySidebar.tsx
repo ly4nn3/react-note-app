@@ -6,7 +6,7 @@ import { useDropdownMenu } from "../../context/useDropdownMenu";
 import FolderItem from "./FolderItem";
 import NoteItem from "./NoteItem";
 import ResizeHandle from "./ResizeHandle";
-import styles from "./DirectorySidebar.module.css";
+import styles from "../../styles/modules/DirectorySidebar.module.css";
 
 function DirectorySidebar() {
     const {

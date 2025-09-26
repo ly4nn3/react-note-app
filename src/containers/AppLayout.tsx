@@ -4,7 +4,7 @@ import NoteEditor from "../components/Editor/NoteEditor";
 import { SidebarProvider } from "../context/SidebarContext";
 import { NotesProvider } from "../context/NotesContext";
 
-import styles from "./AppLayout.module.css";
+import styles from "../styles/modules/AppLayout.module.css";
 
 function AppLayout() {
     return (

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNotes } from "../../context/useNotes";
 import DropdownMenu from "../Shared/DropdownMenu";
-import styles from "./NoteItem.module.css";
+import styles from "../../styles/modules/NoteItem.module.css";
 
 interface Note {
     id: number;
