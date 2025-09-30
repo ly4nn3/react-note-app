@@ -1,3 +1,10 @@
+/**
+ * Icons
+ * -----
+ * Collection of reusable SVG icon components.
+ * - Keeps icons consistent and centralized
+ * - Each export is a stateless functional component returning an <svg>
+ */
 export const DownIcon = () => (
     <svg
         xmlns="http://www.w3.org/2000/svg"

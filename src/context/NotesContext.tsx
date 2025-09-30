@@ -1,19 +1,39 @@
 import { createContext } from "react";
 
+/**
+ * Note Interface
+ * --------------
+ * Represents a single note.
+ */
 interface Note {
     id: number;
     title: string;
     content: string;
-    folderId?: number;
-    updatedAt: number;
+    folderId?: number; // Optional folder association
+    updatedAt: number; // Timestamp of last update
 }
 
+/**
+ * Folder Interface
+ * ----------------
+ * Represents a folder for organizing notes.
+ */
 interface Folder {
     id: number;
     title: string;
-    parentId?: number;
+    parentId?: number; // Optional for nested folders (future work)
 }
 
+/**
+ * NotesContextType
+ * ----------------
+ * Defines shape of NotesContext:
+ * - notes: array of all notes
+ * - folders: array of all folders
+ * - create/update/delete operations for notes
+ * - create/update/delete operations for folders
+ * - refresh functions for fetching latest data
+ */
 export interface NotesContextType {
     notes: Note[];
     folders: Folder[];
@@ -28,6 +48,12 @@ export interface NotesContextType {
     renameFolder: (id: number, title: string) => Promise<void>;
 }
 
+/**
+ * NotesContext
+ * ------------
+ * React context for managing notes and folders.
+ * Default value is `undefined` to enforce proper usage with a provider.
+ */
 export const NotesContext = createContext<NotesContextType | undefined>(
     undefined
 );

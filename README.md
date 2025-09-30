@@ -2,8 +2,12 @@
 
 This project is a single-page note-taking application built with React and TypeScript.
 The goal is to create an offline-first writing environment inspired by apps like Bear and VSCode.
-The app features a dual-sidebar layout: a narrow shortcut bar for quick actions and a resizable directory explorer for browsing notes and folders.
-The main editor provides a clean space for writing and will eventually include features such as auto-saving, search, and tagging.
+
+The app features a dual-sidebar layout:
+- A narrow **Shortcut Bar** for quick actions
+- A **Resizable Directory Sidebar** for browsing notes and folders.
+
+The main editor provides a clean writing space, with plans for features such as auto-saving, search, and tagging.
 
 To run the project locally:
 1. Clone this repository.
@@ -21,16 +25,18 @@ This application is structured as a single-page application (SPA).
 Instead of traditional pages, it relies on components that dynamically render content:
 
 **Shortcut Bar**:
-- A narrow, VSCode/Obsidian-style bar for quick actions.
-- Create a new note or folder, accessing settings, or switching to a list of favorite folders or files.
+- Quick actions like toggling the directory sidebar, creating notes or folders.
+- Always visible on the side screen.
 
 **Directory Sidebar**:
-- An expandable and resizable sidebar that displays the folder and note structure.
-- Notes and folders here will be dynamically loaded from IndexedDB.
+- Expandable/collapsible folder tree.
+- Resizable via drag using `ResizeHandle.tsx`.
+- Displays notes and folders stored in IndexedDB.
 
 **Note Editor**:
-- The main writing area where users can view and edit their notes.
-- The content displayed is based on the currently selected note in the directory.
+- Main writing area.
+- Displays the content of the currently selected note.
+- Updates notes via `useNotes.ts` context.
 
 # Development Environment
 

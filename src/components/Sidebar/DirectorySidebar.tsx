@@ -11,40 +11,61 @@ import ResizeHandle from "./ResizeHandle";
 
 import styles from "../../styles/modules/DirectorySidebar.module.css";
 
+/**
+ * DirectorySidebar Component
+ * --------------------------
+ * Displays main sidebar with folders and notes.
+ * - Organizes notes into folders or under "Unassigned"
+ * - Supports collapsing/expanding folders
+ * - Allows slecting active note/folder
+ * - Integrates with dropdown menus and resizable sidebar
+ */
 function DirectorySidebar() {
+    // Sidebar state and actions from context
     const {
-        isSidebarOpen,
-        activeNoteId,
-        setActiveNoteId,
-        activeFolderId,
-        setActiveFolderId,
+        isSidebarOpen, // Whether sidebar is open
+        activeNoteId, // Current active note ID
+        setActiveNoteId, // Setter for active note ID
+        activeFolderId, // Current active folder ID
+        setActiveFolderId, // Setter for active folder ID
     } = useSidebarContext();
 
+    // Notes and folders data from context
     const { notes, folders } = useNotes();
 
+    // Track whoch folders are collapsed (hidden notes inside)
     const [collapsedFolders, setCollapsedFolders] = useState<Set<number>>(
         new Set()
     );
 
+    // Sidebar resizing logic (width, mouse events, ref binding)
     const { sidebarWidth, isResizing, handleMouseDown, sidebarRef } =
         useResizableSidebar();
 
-    const { openDropDown, handleDropdownToggle, handleOutsideClick } =
+    // Dropdown menu state (item is open, toggle behacior, close menu)
+    const { openDropDown, handleDropdownToggle, closeDropdown } =
         useDropdownMenu();
 
+    // Hide sidebar if closed
     if (!isSidebarOpen) return null;
 
+    // Notes without a folder
     const unassignedNotes = notes.filter((note) => !note.folderId);
 
+    /**
+     * Toggle collapse/expand state of a folder.
+     * - Uses Set for efficient add/remove of folder IDs
+     * - Stops click event from bubbling (parent folder click isn't triggered)
+     */
     const toggleFolderCollapse = (folderId: number, e: React.MouseEvent) => {
         e.stopPropagation();
         setCollapsedFolders((prev) => {
             const newSet = new Set(prev);
 
             if (newSet.has(folderId)) {
-                newSet.delete(folderId);
+                newSet.delete(folderId); // Expand folder
             } else {
-                newSet.add(folderId);
+                newSet.add(folderId); // Collapse folder
             }
             return newSet;
         });
@@ -52,14 +73,15 @@ function DirectorySidebar() {
 
     return (
         <div
-            ref={sidebarRef}
+            ref={sidebarRef} // For resizing behavior
             className={styles.directorySidebar}
-            style={{ width: sidebarWidth }}
-            onClick={handleOutsideClick}
+            style={{ width: sidebarWidth }} // Dynamic width
+            onClick={closeDropdown} // Close dropdown if clicking outside
         >
             <h3 className={styles.title}>Notes</h3>
 
             <ul className={styles.list}>
+                {/* Render folders */}
                 {folders.map((folder) => (
                     <FolderItem
                         key={folder.id}
@@ -73,6 +95,7 @@ function DirectorySidebar() {
                         openDropDown={openDropDown}
                         onDropdownToggle={handleDropdownToggle}
                     >
+                        {/* Render notes inside folder (not collapsed) */}
                         {!collapsedFolders.has(folder.id) && (
                             <ul className={styles.subList}>
                                 {notes
@@ -98,6 +121,7 @@ function DirectorySidebar() {
                     </FolderItem>
                 ))}
 
+                {/* Unassigned section for notes without folders */}
                 {unassignedNotes.length > 0 && (
                     <li className={styles.folderItem}>
                         <strong>Unassigned</strong>
@@ -117,6 +141,7 @@ function DirectorySidebar() {
                 )}
             </ul>
 
+            {/* Resize handle at right edge of sidebar */}
             <ResizeHandle
                 isResizing={isResizing}
                 onMouseDown={handleMouseDown}

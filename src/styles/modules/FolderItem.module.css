@@ -10,6 +10,15 @@
     cursor: pointer;
 }
 
+.folderHeader.active {
+    background-color: var(--color-accent);
+    color: var(--color-primary-bg);
+}
+
+.folderHeader.active .collapseButton {
+    color: var(--color-primary-bg);
+}
+
 .collapseButton {
     background: none;
     border: none;
