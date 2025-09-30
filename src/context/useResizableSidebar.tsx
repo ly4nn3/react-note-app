@@ -1,7 +1,10 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 
 export const useResizableSidebar = () => {
-    const [sidebarWidth, setSidebarWidth] = useState(280);
+    const [sidebarWidth, setSidebarWidth] = useState(() => {
+        const saved = localStorage.getItem("sidebarWidth");
+        return saved ? parseInt(saved, 10) : 280;
+    });
     const [isResizing, setIsResizing] = useState(false);
     const [startX, setStartX] = useState(0);
     const [startWidth, setStartWidth] = useState(0);
@@ -36,6 +39,10 @@ export const useResizableSidebar = () => {
     const handleMouseUp = useCallback(() => {
         setIsResizing(false);
     }, []);
+
+    useEffect(() => {
+        localStorage.setItem("sidebarWidth", sidebarWidth.toString());
+    }, [sidebarWidth]);
 
     useEffect(() => {
         if (isResizing) {

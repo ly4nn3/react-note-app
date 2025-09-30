@@ -53,16 +53,6 @@ This project was developed using:
 
 **Core Phases**
 
-<details open>
-<summary>Phase 5: Styling & Polish</summary>
-
-- Hover states and transitions
-- Icons and visual hierarchy
-- Consistent component styling
-- Responsive behavior
-- Loading states
-</details>
-
 <details>
 <summary>Phase 1: Scaffolding & Layout ✅</summary>
 
@@ -95,6 +85,15 @@ This project was developed using:
 - Resize sidebars via drag
 - Expand/collapse folders
 - Confirmation before deletion
+</details>
+
+<details>
+<summary>Phase 5: Styling & Polish ✅</summary>
+
+- Hover states and transitions
+- Icons and visual hierarchy
+- Consistent component styling
+- Responsive behavior
 </details>
 
 ---
