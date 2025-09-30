@@ -1,0 +1,13 @@
+.resizeHandle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4px;
+    height: 100%;
+    cursor: ew-resize;
+    background-color: transparent;
+}
+
+.resizeHandle.resizing {
+    background-color: #999;
+}

@@ -1,0 +1,32 @@
+.noteItem {
+    list-style: none;
+    margin-bottom: 5px;
+    padding: 5px 0;
+}
+
+.noteItem.active {
+    background-color: var(--color-accent);
+    color: var(--color-primary-bg);
+}
+
+.noteItem.active .iconButton {
+    color: var(--color-primary-bg);
+}
+
+.noteContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.noteTitle {
+    flex: 1;
+}
+
+.renameInput {
+    flex: 1;
+    border: 1px solid #ccc;
+    padding: 2px;
+}

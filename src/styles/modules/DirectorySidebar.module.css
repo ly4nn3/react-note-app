@@ -1,0 +1,27 @@
+.directorySidebar {
+  width: 200px;
+  background-color: var(--color-secondary-bg);
+  color: var(--color-secondary-text);
+  padding: 12px;
+  position: relative;
+}
+
+.title {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item {
+  padding: 6px 0;
+  cursor: pointer;
+}
+
+.item:hover {
+  background-color: #e0e0e0;
+}

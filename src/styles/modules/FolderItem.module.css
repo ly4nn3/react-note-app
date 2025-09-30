@@ -1,0 +1,42 @@
+.folderItem {
+    list-style: none;
+    margin-bottom: 5px;
+}
+
+.folderHeader {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.collapseButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-right: 5px;
+    color: var(--color-primary-text);
+}
+
+.collapseButton:hover {
+    color: var(--color-primary-bg);
+    background-color: var(--color-accent);
+}
+
+.folderContent {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.folderTitle {
+    flex: 1;
+}
+
+.renameInput {
+    flex: 1;
+    border: 1px solid #ccc;
+    padding: 2px;
+}

@@ -91,6 +91,7 @@ function NoteItem({
                     onEdit={handleEdit}
                     onDelete={handleDelete}
                     onToggle={(e) => onDropdownToggle(dropdownId, e)}
+                    isActive={isActive}
                 />
             </>
         );

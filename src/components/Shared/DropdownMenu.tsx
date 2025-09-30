@@ -6,6 +6,7 @@ interface DropdownMenuProps {
     onEdit: (e: React.MouseEvent) => void;
     onDelete: (e: React.MouseEvent) => void;
     onToggle: (e: React.MouseEvent) => void;
+    isActive?: boolean;
 }
 
 function DropdownMenu({
@@ -13,10 +14,14 @@ function DropdownMenu({
     onEdit,
     onDelete,
     onToggle,
+    isActive,
 }: DropdownMenuProps) {
     return (
         <div className={styles.dropdownContainer}>
-            <button onClick={onToggle} className={styles.iconButton}>
+            <button
+                onClick={onToggle}
+                className={`${styles.iconButton} ${isActive ? styles.active : ""}`}
+            >
                 <MoreIcon />
             </button>
 

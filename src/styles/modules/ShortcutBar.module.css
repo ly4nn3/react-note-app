@@ -1,0 +1,28 @@
+.shortcutBar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 64px;
+  min-width: 64px;
+  background-color: var(--color-primary-bg);
+  padding: 8px 0;
+}
+
+.toggleButton,
+.createFolderButton,
+.newNoteButton {
+  color: var(--color-primary-text);
+  background: none;
+  border: none;
+  padding: 8px;
+}
+
+.toggleButton:hover,
+.createFolderButton:hover,
+.newNoteButton:hover {
+  cursor: pointer;
+  background-color: var(--color-secondary-bg);
+  color: var(--color-accent);
+  transition: color 0.5s;
+  border-radius: 8px;
+}
