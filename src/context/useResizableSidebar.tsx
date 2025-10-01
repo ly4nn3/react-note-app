@@ -3,7 +3,7 @@ import { useState, useRef, useEffect, useCallback } from "react";
 /**
  * useResizableSidebar Hook
  * ------------------------
- * handles logic for resizable sidebar.
+ * Handles logic for resizable sidebar.
  * - Tracks sidebar width and stores it in localStorage
  * - Manages resizing state when user drags resize handle
  * - Provides ref for sidebar DOM element

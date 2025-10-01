@@ -17,7 +17,7 @@ import styles from "../../styles/modules/DirectorySidebar.module.css";
  * Displays main sidebar with folders and notes.
  * - Organizes notes into folders or under "Unassigned"
  * - Supports collapsing/expanding folders
- * - Allows slecting active note/folder
+ * - Allows selecting active note/folder
  * - Integrates with dropdown menus and resizable sidebar
  */
 function DirectorySidebar() {
