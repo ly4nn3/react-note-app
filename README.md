@@ -17,7 +17,7 @@ To run the project locally:
 
 The purpose of this software is to strengthen my skills in building React SPAs, managing state with React Context, and working with browser-based persistence via IndexedDB.
 
-[Software Demo Video - In progress]()
+[Software Demo Video - In progress](https://youtu.be/K00Trw8-uuQ)
 
 # Web Pages
 
