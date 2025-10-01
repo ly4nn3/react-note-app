@@ -14,7 +14,7 @@ interface ResizeHandleProps {
 /**
  * ResizeHandle Component
  * ----------------------
- * Draggable divider used to resice the sidebar.
+ * Draggable divider used to resize the sidebar.
  * Visually styled as a thin bar;
  * - Additionl `resizing` class when sidebar is actively being resized
  */
